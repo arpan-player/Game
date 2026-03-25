@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/SettingsMenu.gd" id="1_sm3n0"]
+
+[node name="SettingsMenu" type="CanvasLayer"]
+script = ExtResource("1_sm3n0")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 300.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 130.0
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+text = "Settings"
+
+[node name="PointerSensRow" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="PointerSensLabel" type="Label" parent="Panel/VBox/PointerSensRow"]
+text = "Pointer sensitivity"
+
+[node name="PointerSensValue" type="Label" parent="Panel/VBox/PointerSensRow"]
+text = "x1.00"
+
+[node name="PointerSensSlider" type="HSlider" parent="Panel/VBox"]
+size_flags_horizontal = 3
+min_value = 0.2
+max_value = 3.0
+step = 0.05
+value = 1.0
+
+[node name="Hint" type="Label" parent="Panel/VBox"]
+text = "Esc to close"
+
