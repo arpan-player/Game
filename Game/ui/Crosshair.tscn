@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/Crosshair.gd" id="1_cx4ir"]
+
+[node name="Crosshair" type="CanvasLayer"]
+script = ExtResource("1_cx4ir")
+
+[node name="Cross" type="Node2D" parent="."]
+
+[node name="H" type="Line2D" parent="Cross"]
+width = 3.0
+default_color = Color(1, 1, 1, 0.95)
+points = PackedVector2Array(-10, 0, 10, 0)
+
+[node name="V" type="Line2D" parent="Cross"]
+width = 3.0
+default_color = Color(1, 1, 1, 0.95)
+points = PackedVector2Array(0, -10, 0, 10)
+

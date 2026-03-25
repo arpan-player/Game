@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_g8g0j"]
+[ext_resource type="Script" path="res://scripts/combat/DamageArea2D.gd" id="2_x8y5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2"]
+radius = 90.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3"]
+radius = 10.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_g8g0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AimLine" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(0.6, 0.95, 1, 0.9)
+z_index = 10
+visible = false
+
+[node name="MeleeFlash" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(1, 1, 1, 0.85)
+z_index = 11
+visible = false
+
+[node name="BodyVisual" type="Polygon2D" parent="."]
+color = Color(0.4, 0.9, 1, 1)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3")
+
+[node name="MeleeArea" type="Area2D" parent="."]
+monitoring = false
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("2_x8y5w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="UltArea" type="Area2D" parent="."]
+monitoring = false
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("2_x8y5w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UltArea"]
+shape = SubResource("CircleShape2D_2")
+

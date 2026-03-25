@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/HUD.gd" id="1_5q7y3"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_5q7y3")
+
+[node name="HPBar" type="ProgressBar" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 40.0
+min_value = 0.0
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 18.0
+text = "HP"
+
+[node name="HeatBar" type="ProgressBar" parent="."]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 220.0
+offset_bottom = 70.0
+min_value = 0.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="HeatLabel" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 48.0
+text = "Heat"
+
+[node name="UltLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 80.0
+text = "Ult locked"
+
+[node name="UltHintLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 100.0
+text = "Click=melee, E=ult, N=new quest"
+
+[node name="HelpLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 125.0
+text = "Help"
+autowrap_mode = 2
+clip_contents = true
+
